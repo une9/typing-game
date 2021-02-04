@@ -16,7 +16,7 @@ let words;
 
 async function loadWords() {
     try {
-        const response = await fetch('https://random-word-api.herokuapp.com/all');
+        const response = await fetch('https://random-word-api.herokuapp.com/word?number=100');
         if (response.status == 200) {
             const raw_words = await response.json();
             const filtered_words = raw_words.filter(word => word.length <= 8);
